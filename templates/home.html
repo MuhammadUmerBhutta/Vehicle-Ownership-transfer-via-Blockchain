@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<html>
+<body>
+
+  <div class="jumbo">
+    <h2>Welcome<h2>
+    <h3>This is the home page</h3>
+   Name: <br>
+   <input type="text" name="name" placeholder="Your Name Please" />
+   <br><br>
+CNIC: <br>
+   <input type="number" name="cnic" placeholder="Your CNIC" />
+<br><br>
+Biometric HASH: <br>
+   <input type="button" onclick="something()" value="ENROLL">
+   <br><br>
+   <div id="hash"></div>
+  
+<script>
+function something(){
+    fetch("http://127.0.0.1:5000/enrolll")
+    .then( res => res.json())
+    .then( response => { 
+       console.log(response)
+       document.getElementById("hash").innerHTML = response.data
+    });
+}
+</script>
+</body>
+</html>
+{% endblock %}

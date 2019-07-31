@@ -1,0 +1,24 @@
+
+{% block content %}
+<!DOCTYPE html>
+
+<body>
+
+  <div class="jumbo">
+    <h2>Welcome<h2>
+    <h3>This is the home page<h3>
+   <input type="button" onclick="something()" value="ENROLL">
+  </div>
+<script>
+function something(){
+fetch("http://127.0.0.1:5000/ENROLL", {
+  method: "get",
+})
+.then( (response) => { 
+   console.log("Khawar")
+});
+}
+</script>
+</body>
+</html>
+{% endblock %}
